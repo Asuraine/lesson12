@@ -1,10 +1,22 @@
 package ru.sbgeu.lichman.basic;
 
+import java.security.PublicKey;
+
 public class Cat {
 
-    String name;
-    int appetite;
-    boolean isHungry;
+    private String name;
+    private int appetite;
+    private boolean isHungry;
+
+    public String getName () {
+        return name;
+    }
+    public int getAppetite () {
+        return appetite; }
+
+     public boolean getIsHungry () {
+        return isHungry;
+    }
 
     public Cat(String name, int appetite) {
         this.name = name;
@@ -24,4 +36,5 @@ public class Cat {
     public void info() {
         System.out.println(name + " имеет аппетит " + appetite + ".\n" + name + " приступает к еде.");
     }
+
 }

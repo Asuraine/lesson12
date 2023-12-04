@@ -9,14 +9,14 @@ public class MainApl {
                 new Cat("Жорик", 20),
                 new Cat("Чез", 10)};
 
-        Plate plate = new Plate(30, 70);
+        Plate plate = new Plate(70, 70);
         plate.info();
         for (int i = 0; i < cats.length; i++) {
-            if (cats[i].isHungry == true && cats[i].appetite < plate.food) {
+            if (cats[i].getIsHungry() == true && cats[i].getAppetite() <= plate.getFoodMax()) {
                 cats[i].catHunger(plate);
-                System.out.println("Котик " + cats[i].name + " покушал!");
+                System.out.println("Котик " + cats[i].getName() + " покушал!");
             } else {
-                System.out.println("Котик " + cats[i].name + " не поел!");
+                System.out.println("Котик " + cats[i].getName() + " не поел!");
             }
 
 

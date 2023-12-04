@@ -1,8 +1,10 @@
 package ru.sbgeu.lichman.basic;
 
 public class Plate {
-    int food;
-    int foodMax;
+    private int food;
+    private int foodMax;
+
+    public int getFoodMax() { return foodMax;}
 
     public Plate(int food, int foodMax) {
         this.food = food;
@@ -10,23 +12,18 @@ public class Plate {
     }
 
     public boolean decreaseFood(int amountDecr) {
-        int diffFood = food - amountDecr;
-        if (food - amountDecr >= 0) {
-            food = diffFood;
+        if (this.foodMax < food) {
+            return false;
+        } else {
+            this.foodMax -= food;
             return true;
         }
-        if (diffFood < 0) {
-            food = 0;
-            System.out.println("В тарелке нет корма");
-        }
-        return false;
-
     }
 
     public int addFood(int eat) {
         if (food + eat > foodMax) {
             food = foodMax;
-            System.out.println("У вас нет места в тарелке");
+            System.out.println("в тарелку еды насыпали, но чуть просыпалось");
         }
         if (food < foodMax) {
             food = foodMax + eat;
